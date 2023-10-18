@@ -1,0 +1,280 @@
+{% load static %}
+<style>
+    .media {
+        padding: 50px 8%;
+        background-color: rgb(43, 43, 43);
+        margin-bottom: 150px;
+        position: relative;
+    }
+    .media .top {
+        margin-bottom: 40px;
+    }
+    .media .top h2 {
+        font-size: 35px;
+        font-weight: bold;
+        color: #fff;
+        margin-bottom: 40px;
+        float: right;
+    }
+    .media .top .btn-3 {
+    background: #fff;
+    transition: all 0.3s ease;
+    border-radius: 10px;
+    color: #e71515;
+    position: relative;
+    z-index: 5;
+    width: 155px;
+    margin: auto;
+    padding: 15px 0;
+    display: block;
+    border: none;
+    cursor: pointer;
+    font-size: 13px;
+    float: left;
+    font-family: 'Almarai', sans-serif;
+    }
+    .media .top .btn-3:hover {
+        width: 160px;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+
+    }
+    .media .bottom {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 40px;
+        clear: both;
+        text-align: center;
+    }
+    .media .bottom .right .all {
+        margin-top: 100px;
+        text-align: center;
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+
+    }
+    .media .bottom .right .all:hover {
+        transform: scale(1.1);
+    }
+    .media .bottom .right .all h4 {
+        font-size: 20px;
+        color: #fff;
+    }
+    .media .bottom .right .all img {
+        width: 20px;
+        margin-top: 10px;
+    }
+    .media .bottom .right .card {
+        cursor: pointer;
+        overflow: hidden;
+
+    }
+    .media .bottom .right .card:hover .thump img {
+        -webkit-transform: scale(1.08);
+        transform: scale(1.08);
+        filter: brightness(80%) grayscale(100%);
+    }
+    .media .bottom .right .thump {
+        height: 350px;
+        width: 100%;
+        overflow: hidden;
+        border-radius: 12px;
+    }
+    .media .bottom .right .thump img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        -webkit-transition: 0.4s ease;
+        transition: 0.4s ease;
+        filter: brightness(80%);
+    }
+    .media .bottom .right .play {
+        width: 40px;
+        background-color: #e71515;
+        border-radius: 50%;
+        margin: auto;
+        margin-top: -20px;
+        display: block;
+        position: relative;
+        z-index: 5;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .media .bottom .right h3 {
+        font-size: 22px;
+        color: #fff;
+        font-weight: bold;
+        margin-top: 10px;
+        padding: 0 10%;
+    }
+    .media .bottom .right .logo {
+        width: 10px;
+        margin: auto;
+        margin-top: 5px;
+        display: block;
+    }
+    .media .bottom .right p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.713);
+        font-weight: bold;
+        margin-top: 5px;
+    }
+    .media .bottom .left .card {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 10px;
+    }
+    .media .bottom .left hr {
+        margin: 10px 0;
+        border: none;
+        height: 1px;
+        background-color: rgba(255, 255, 255, 0.443);
+        width: 80%;
+    }
+    .media .bottom .left .card {
+        cursor: pointer;
+        overflow: hidden;
+    }
+    .media .bottom .left .card:hover .thump img {
+        -webkit-transform: scale(1.08);
+        transform: scale(1.08);
+        filter: brightness(80%) grayscale(100%);
+
+    }
+    .media .bottom .left .card .left {
+        padding: 10px;
+    }
+    .media .bottom .left .thump {
+        height: 170px;
+        width: 100%;
+        overflow: hidden;
+    }
+    .media .bottom .left .thump img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        border-radius: 12px;
+        display: inline;
+        -webkit-transition: 0.4s ease;
+        transition: 0.4s ease;
+        filter: brightness(80%);
+
+    }
+    .media .bottom .left .play {
+        width: 40px;
+        background-color: #e71515;
+        border-radius: 50%;
+        margin-top: -20px;
+        display: inline;
+        position: relative;
+        z-index: 5;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+    }
+    .media .bottom .left h3 {
+        font-size: 18px;
+        color: #fff;
+        font-weight: bold;
+        margin-top: 0;
+        display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+
+    }
+    .media .bottom .left .logo {
+        width: 10px;
+        margin: auto;
+        margin-top: 5px;
+        display: block;
+    }
+    .media .bottom .left p {
+        font-size: 15px;
+        color: rgba(255, 255, 255, 0.713);
+        font-weight: bold;
+        margin-top: 5px;
+    }
+
+
+</style>
+
+<div class="media">
+    <div class="top">
+        <h2>ميديا السويحلي</h2>
+        <button class="btn btn-3">عرض الكل</button>
+    </div>
+
+    <div class="bottom">
+        <div class="right">
+            <div class="card">
+                <div class="thump">
+                    <img src="{% static 'images/thum1.jpg' %}" alt="">
+                </div>
+                <img src="{% static 'images/play.png' %}" alt="" class="play">
+                <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
+                <p>منذ 3 ساعات</p>
+            </div>
+            <div class="all">
+                <h4>عرض الكل</h4>
+                <img src="{% static 'images/rightarrow.png' %}" alt="">
+            </div>
+        </div>
+        <div class="left">
+            <div class="card">
+                <div class="right">
+                    <div class="thump">
+                        <img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/386691699_714501297388916_6783386127273726806_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mbD6uuQPpoEAX_utIwl&_nc_ht=scontent.fmji2-2.fna&oh=00_AfDA_69tgs_xIaLBNHCHTDLhKLH88Yek22s94iHIQkWzSg&oe=6534AE7B" alt="">
+                    </div>
+                    <img src="{% static 'images/play.png' %}" alt="" class="play">
+                </div>
+                <div class="left">
+                    <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                    <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
+                    <p>منذ 3 ساعات</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="right">
+                    <div class="thump">
+                        <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/377678049_710955377743508_1668710815833119256_n.jpg?stp=dst-jpg_p843x403&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=OnO38BscElQAX--GHWx&_nc_ht=scontent.fmji2-1.fna&oh=00_AfBUjxqC-dnE98nre7erd8VEqHKv4VvA67pdBP6TdMMHIA&oe=6533B060" alt="">
+                    </div>
+                    <img src="{% static 'images/play.png' %}" alt="" class="play">
+                </div>
+                <div class="left">
+                    <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                    <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
+                    <p>منذ 3 ساعات</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="right">
+                    <div class="thump">
+                        <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/376879487_708583397980706_6763798955867679505_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=GvcmeP2fdhEAX_MM01u&_nc_ht=scontent.fmji2-1.fna&oh=00_AfAbuMnkMgXtJ5G-EI3FtvviWzAj7WSfcBTOUXff8sRCgQ&oe=65349202" alt="">
+                    </div>
+                    <img src="{% static 'images/play.png' %}" alt="" class="play">
+                </div>
+                <div class="left">
+                    <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                    <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
+                    <p>منذ 3 ساعات</p>
+                </div>
+            </div>
+            <hr>
+            <div class="card">
+                <div class="right">
+                    <div class="thump">
+                        <img src="{% static 'images/thum1.jpg' %}" alt="">
+                    </div>
+                    <img src="{% static 'images/play.png' %}" alt="" class="play">
+                </div>
+                <div class="left">
+                    <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                    <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
+                    <p>منذ 3 ساعات</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+</div>
