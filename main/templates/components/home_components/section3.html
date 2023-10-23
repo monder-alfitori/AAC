@@ -9,6 +9,11 @@
         margin-bottom: 150px;
         position: relative;
     }
+    @media screen and (min-width: 1600px) {
+        .latest {
+            padding: 0 16%;
+        }
+    }
     .latest h2 {
         font-size: 35px;
         font-weight: bold;
@@ -17,7 +22,7 @@
         float: right;
     }
     .latest .btn-3 {
-    background: #e71515;
+    background: #C11221;
     transition: all 0.3s ease;
     border-radius: 10px;
     color: #fff;
@@ -36,7 +41,7 @@
     }
     .latest .btn-3:hover {
         width: 160px;
-        background: #e71515;
+        background: #C11221;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
 
     }
@@ -55,9 +60,11 @@
         background-color: #fff;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         transition: all .3s ease-in-out;
+        
     }
     .latest .card:hover {
         transform: scale(1.03);
+        border-bottom: 4px solid #C11221;
     }
     .latest .card .top {
         display: -webkit-box;
@@ -83,7 +90,7 @@
     }
     .latest .info h6 {
         font-size: 15px;
-        color: #e71515;
+        color: #C11221;
         font-weight: 500;
         display: inline;
         margin-left: 5px;
@@ -104,12 +111,13 @@
         -webkit-box-orient: vertical;
         overflow: hidden;
     }
+
 </style>
 
 
 <div class="latest">
     <h2>آخر الأخبار المتعلقة بالنادي</h2>
-    <button class="btn btn-3">عرض المزيد</button>
+    <a href="{% url 'news' %}"><button class="btn btn-3">عرض المزيد</button></a>
     <div class="cards">
 
         <a href="">
@@ -120,10 +128,11 @@
                 <div class="info">
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>الاستعدادت</h6>
+                        <h6>نشاطات</h6>
                         <p>منذ يومين</p>
                     </div>
-                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
+                    <h3>زيارة أعضاء الإدارة والطاقم الفني للناشط السابق للنادي</h3>
+
                 </div>
             </div>
         </a>
@@ -136,10 +145,10 @@
                 <div class="info">
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>الاستعدادت</h6>
+                        <h6>استعدادت</h6>
                         <p>منذ يومين</p>
                     </div>
-                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
+                    <h3>وصول بعثة فريق الطائرة إلى مطار القاهرة</h3>
                 </div>
             </div>
         </a>
@@ -153,8 +162,8 @@
                 <div class="info">
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>الاستعدادت</h6>
-                        <p>منذ يومين</p>
+                        <h6>استعدادت</h6>
+                        <p>3 أيام مضت</p>
                     </div>
                     <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
                 </div>
@@ -170,7 +179,7 @@
                 <div class="info">
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>الاستعدادت</h6>
+                        <h6>استعدادت</h6>
                         <p>منذ يومين</p>
                     </div>
                     <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
@@ -186,7 +195,7 @@
                 <div class="info">
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>الاستعدادت</h6>
+                        <h6>استعدادت</h6>
                         <p>منذ يومين</p>
                     </div>
                     <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
@@ -194,7 +203,21 @@
             </div>
         </a>
       
-       
+        <a href="">
+            <div class="card">
+                <div class="img">
+                    <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/392858352_721225270049852_6999241276085406074_n.jpg?_nc_cat=106&ccb=1-7&_nc_sid=5f2048&_nc_ohc=62Rn4BEpnaIAX9jyJ0J&_nc_ht=scontent.fmji2-1.fna&oh=00_AfAAZNe9rsxeAtc3jEKFKYd76AQqtbFv635kR3_oCgNK7A&oe=65345802" alt="">
+                </div>
+                <div class="info">
+                    <div class="top">
+                        <img src="{% static 'images/news.png' %}" alt="">
+                        <h6>استعدادت</h6>
+                        <p>منذ يومين</p>
+                    </div>
+                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
+                </div>
+            </div>
+        </a>
 
     </div>
 </div>

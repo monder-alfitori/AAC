@@ -1,0 +1,230 @@
+{% load static %}
+
+<style>
+
+    * {
+        padding: 0;
+        margin: 0;
+    }
+.navbar {
+    width: 100vw;
+    padding: 7px 0 1px 0;
+    display: grid;
+    grid-template-columns: 2fr 1fr;
+    background-color: rgba(0, 0, 0, 0);
+    z-index: 98;
+    position: fixed;
+    top: 0;
+    right: 0;
+    align-items: center;
+    overflow: hidden;
+}
+.navbar .Mlogo {
+    padding-right: 7.5vw;
+}
+@media screen and (min-width: 1600px) {
+    .navbar .Mlogo {
+    padding-right: 15.5vw;
+}
+}
+.navbar .Mlogo img {
+    width: 60px
+}
+.navbar .hamburger {
+    text-align: left;
+    padding-left: 9vw;
+}
+@media screen and (min-width: 1600px) {
+.navbar .hamburger {
+    padding-left: 16.5vw;
+}
+}
+.navbar .hamburger .nav-icon img {
+  width: 35px;
+  z-index: 56;
+  cursor: pointer;
+
+}
+
+
+.full-nav {
+  background: #fff;
+  color: #18191d;
+  position: fixed;
+  left: 0;
+  top: 0px;
+  height: 100vh;
+  width: 100%;
+  z-index: 99;
+  overflow-x: hidden;
+  visibility: hidden;
+  opacity: 0;
+  transform: translateY(-100px);
+  transition: all 0.4s ease-in-out;
+  text-align: right;
+}
+
+.full-nav.open {
+  opacity: 1;
+  visibility: visible;
+  transform: translateY(0);
+  transition: all 0.4s ease-in-out;
+  z-index: 99;
+}
+
+.full-nav .content {
+    padding: 100px 8%;
+}
+@media screen and (min-width: 1600px) {
+    .full-nav .content {
+    padding: 100px 16%;
+}
+}
+.full-nav .logo {
+
+}
+
+.nav2 {
+
+}
+
+.nav2 ul {
+
+}
+
+.nav2 ul li {
+  display: block;
+  padding: 10px;
+  cursor: pointer;
+  transition: all 0.5s;
+}
+
+.nav2 ul li a {
+  font-family: "Roboto Condensed", sans-serif;
+  font-size: 25px;
+  color: #18191d;
+}
+
+.nav2 ul li:hover {
+    color: #C11221
+}
+
+.nav2 ul li:hover a,
+.nav2 ul li:hover a span {
+  color: #C11221;
+}
+
+.logo-title{
+  text-decoration:none;
+  color:black;
+
+}
+ .nav-close {
+    position: absolute;
+    top: 27px;
+    left: 8%;
+    transition: all 20ms;
+    font-size: 60px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #000;
+  }
+  .nav-close:hover {
+    color:#C11221;
+  }
+</style>
+
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+<link href="https://fonts.googleapis.com/css?family=Oswald|Roboto+Condensed&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css?family=Kristi&display=swap" rel="stylesheet">
+
+
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/magnific-popup.js/1.1.0/jquery.magnific-popup.min.js"></script>
+
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+
+
+        <div class="navbar">
+            <div class="Mlogo">
+                <a href="{% url 'home' %}">
+                <img src="{% static 'images/logo.png' %}" class="MlogoImgae" alt="">
+                </a>
+            </div>
+            <div class="hamburger">
+                <a href="javascript:void(0);" class="nav-icon">
+                    <img src="{% static 'images/hamburger.png' %}" class="naviconimage" alt="">
+                </a>
+            </div>
+        </div>
+
+   
+
+
+<!-- -------------------------------------------------FULL NAVİGATİON----------------------------------------------------- -->
+<div class="full-nav">
+
+    <div class="content">
+        <div class="logo"><a href=""><h1 class="logo-title">Ceren Kurucu</h1></a></div>
+        <nav class="nav2">
+            <ul>
+                <li><a  href="{% url 'home' %}"><span></span>Home</a></li>
+                <li><a  href="{% url 'news' %}"><span></span>News</a></li>
+                <li><a  href="{% url 'media' %}"><span></span>Media</a></li>
+                <li><a  href="{% url 'players' %}"><span></span>Squad</a></li>
+                <li><a  href="{% url 'home' %}#fixtures"><span></span>Fixtures</a></li>
+                <li><a href=""><span></span>SSC</a></li>
+    
+            </ul>
+        </nav>
+    </div>
+
+
+    <a href="javascript:void(0);" class="nav-close">&times;</a>
+
+</div>
+
+
+
+
+
+
+  <script>
+$(".nav-icon").click(function() {
+    $(".full-nav").addClass("open");
+  });
+  $(".nav-close").click(function() {
+    $(".full-nav").removeClass("open");
+  });
+  $(window).scroll(function() {
+    var sc = $(window).scrollTop();
+    if (sc > 100) {
+      $(".nav").addClass("sticky");
+    } else {
+      $(".nav").removeClass("sticky");
+    }
+  });
+
+
+
+  function changeNavbarColorOnScroll() {
+  const navbarElement = document.querySelector('.navbar');
+  const navbarIconElement = document.querySelector('.naviconimage');
+
+  window.addEventListener('scroll', () => {
+    if (window.scrollY > 100) {
+      navbarElement.style.backgroundColor = '#fff';
+      navbarIconElement.style.filter = 'none';
+    } else {
+      navbarElement.style.backgroundColor = '';
+      navbarIconElement.style.filter = '';
+    }
+  });
+}
+
+// Call the function when the DOM is ready
+document.addEventListener('DOMContentLoaded', changeNavbarColorOnScroll);
+
+
+  </script>

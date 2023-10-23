@@ -1,24 +1,75 @@
+{% load static %}
 <style>
     * {
         margin: 0;
         padding: 0;
     }
     .fixtures {
-        margin-top: -50px;
         padding: 0 8%;
         position: relative;
         z-index: 4;
         margin-bottom: 150px;
+
+
     }
+    @media screen and (min-width: 1600px) {
+        .fixtures {
+            padding: 0 16%;
+        }
+    }
+    .fixtures h2 {
+        font-size: 35px;
+        font-weight: bold;
+        color: #000;
+        margin-bottom: 40px;
+        text-align: center;
+    }
+
     .fixtures .column {
-        height: 230px;
-        padding: 20px;
-        background-color: rgb(255, 255, 255);
-        border-radius: 20px;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
+        clear: both;
         display: grid;
-        grid-template-columns: 1fr 1fr 1fr;
-        gap: 20px;
+        grid-template-columns: 3fr 1fr 3fr;
+        gap: 50px;
+    }
+    .fixtures .column img {
+        width: 60px;
+        margin: auto;
+    }
+    .fixtures .column .last {
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 10px;
+    }
+    .fixtures .column .next {
+        transition: all .3s ease-in-out;
+        cursor: pointer;
+        box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+        border-radius: 10px;
+    }
+    .fixtures .last:hover {
+        transform: scale(1.02);
+    }
+    .fixtures .next:hover {
+        transform: scale(1.02);
+    }
+    .fixtures .column .last h3 {
+        background-color: #2d2d2d;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px 20px;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+    }
+    .fixtures .column .next h3 {
+        background-color: #C11221;
+        color: #fff;
+        font-size: 20px;
+        padding: 10px 20px;
+        text-align: center;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
     }
     .fixtures .c {
         background-color: rgb(255, 255, 255);
@@ -26,91 +77,102 @@
         padding: 20px 10px;
         align-items: center;
         display: grid;
-        cursor: pointer;
-        transition: all .3s ease-in-out;
-        border-radius: 20px;
+        border-bottom-left-radius: 10px;
+        border-bottom-right-radius: 10px;
+        height: 280px;        
     }
-    .fixtures .c:hover {
-        transform: scale(1.02);
-    }
-    .fixtures .c1 img {
-        filter:grayscale(100%);
 
+    .fixtures .c .cup {
+        width: 50px;
+        margin: auto;
     }
     
     .fixtures h6 {
-        font-size: 13px;
+        font-size: 16px;
         color: #666;
         font-weight: 400;
     }
-    .fixtures p {
-        font-size: 14px;
-        color: rgb(172, 172, 172);
-        font-weight: 600;
-        margin-top: -10px;
+    .fixtures .clubs {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 10px;
+        text-align: center;
     }
-    .fixtures img {
-        width: 65px;
-        margin:auto;
+    .fixtures .away .clubs {
+        direction: ltr;
     }
-    .fixtures h3 {
-        font-size: 16px;
-        font-weight: 500;
-        color: #222;
+    .fixtures .Sclub {
+        text-align: center;
+
     }
-    .fixtures h3 span {
-        font-weight: 700;
-        color: #000;
+    .fixtures .Sclub img {
+        width: 60px;
     }
+    .fixtures .Vclub {
+        text-align: center;
+    }
+    .fixtures .Vclub img {
+        width: 60px;
+    }
+    .fixtures .vs {
+        text-align: center;
 
-    .fixtures .btn-3 {
-    background: #e71515;
-    transition: all 0.3s ease;
-    border-radius: 10px;
-    color: #fff;
-    position: relative;
-    z-index: 5;
-    width: 155px;
-    margin: auto;
-    padding: 15px 0;
-    display: block;
-    border: none;
-    cursor: pointer;
-    font-size: 13px;
-    margin-top: -15px;
-    font-family: 'Almarai', sans-serif;
+    }
+    .fixtures .vs h1 {
+        font-size: 45px;
+        font-weight: bold;
 
-}
-
-    .fixtures .btn-3:hover {
-    width: 160px;
-    background: #e71515;
-    box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-
-}
+        
+    }
 </style>
 
-<div class="fixtures">
+<div class="fixtures" id="fixtures">
+    <h2>جدول الفريق</h2>
+
     <div class="column">
-        <div class="c c1">
-            <h6>المباراة الماضية - ملعب مصراتة</h6>
-            <img src="https://sfcproject.tafkeer.ly/wp-content/uploads/2023/10/Group-1-6.png" alt="">
-            <h3>السويحلي 3-0 <span>الأهلي بنغازي</span></h3>
-            <p>الجولة 09 - الدوري الليبي</p>
+        <div class="last">
+            <h3>الماضية</h3>
+            <div class="c c1 away">
+                <h6>الاثنين & 16\10\2023</h6>    
+                <h6>ملعب النهر</h6>
+                <img src="{% static 'images/libya.png' %}" alt="" class="cup">
+          
+                <div class="clubs">
+                    <div class="Sclub">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </div>
+                    <div class="vs">
+                        <h1>1 - 0</h1>
+                    </div>
+                    <div class="Vclub">
+                        <img src="{% static 'images/VS2.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="c">
-            <h6>المباراة القادمة - ملعب طرابلس</h6>
-            <img src="https://sfcproject.tafkeer.ly/wp-content/uploads/2023/10/Group-1-5.png" alt="">
-            <h3><span>الاتحاد طرابلس</span> VS السويحلي</h3>
-            <p>الاثنين & 16\10\2023 & 15:00</p>          
+
+        <img src="{% static 'images/stadium.png' %}" alt="">
+
+        <div class="next">
+            <h3>القادمة</h3>
+            <div class="c away">
+                <h6>السبت & 03\13\2023</h6>       
+                <h6>ملعب القاهرة</h6>
+                <img src="{% static 'images/caf.svg' %}" alt="" class="cup">   
+                <div class="clubs">
+                    <div class="Sclub">
+                        <img src="{% static 'images/logo.png' %}" alt="">
+                    </div>
+                    <div class="vs">
+                        <h1>VS</h1>
+                    </div>
+                    <div class="Vclub">
+                        <img src="{% static 'images/VS3.png' %}" alt="">
+                    </div>
+                </div>
+            </div>
         </div>
-        <div class="c">
-            <h6>المباراة القادمة - ملعب النهر</h6>
-            <img src="https://sfcproject.tafkeer.ly/wp-content/uploads/2023/10/Group-1-3.png" alt="">
-            <h3><span>الأهلي طرابلس</span> VS السويحلي</h3>
-            <p>الجمعة & 01\11\2023 & 18:00</p>           
-        </div>
+
     </div>
-    <button class="btn btn-3">جدول المباريات</button>
 
 </div>

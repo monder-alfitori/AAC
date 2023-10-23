@@ -22,25 +22,19 @@
             direction: rtl;
             font-family: 'Almarai', sans-serif;
             background-color: #f6f6f6;
+            padding-top: 80px;
         }
-        .home {
+        .news {
             width: 100%;
             overflow-x: hidden;
         }
-        .navbar .hamburger .nav-icon img {
-            filter: brightness(0) invert(1);
 
-        }
     </style>
 <body hx-target="this" hx-swap="outerHTML">
-    <div class="home">
+    <div class="news">
         {% include 'components/navbar.html' %}
-        {% include 'components/home_components/hero.html' %}
-        {% include 'components/home_components/section7.html' %}
-        {% include 'components/home_components/section3.html' %}
-        {% include 'components/home_components/section4.html' %}
-        {% include 'components/home_components/section2.html' %}
-        {% include 'components/home_components/section5.html' %}
+        {% include 'components/newspage_components/section1.html' %}
+
         {% include 'components/home_components/section6.html' %}
         {% include 'components/footer.html' %}
     </div>

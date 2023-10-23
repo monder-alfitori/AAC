@@ -1,0 +1,125 @@
+{% load static %}
+
+<style>
+    .partners {
+        padding: 70px 8% 100px 8%;
+        position: relative;
+        background: #C11221;
+
+    }
+    @media screen and (min-width: 1600px) {
+        .hero {
+            padding: 70px 16% 100px 16%;
+        }
+    }
+    .partners .logo {
+        margin-bottom: 60px;
+        text-align: center;
+    }
+    .partners .logo img {
+        width: 120px;
+        filter: brightness(0) invert(1);
+    }
+    .partners .logo h3 {
+        font-size: 35px;
+        color: #fff;
+        margin-top: 5px;
+    }
+    .partners .main {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 100px;
+        margin-bottom: 60px;
+        text-align: center;
+        cursor: pointer;
+
+    }
+    .partners .main img {
+        width: 120px;
+        filter: brightness(0) invert(1);
+        -webkit-transition: 0.4s ease;
+        transition: 1s ease;
+
+    }
+    .partners .main img:hover {
+        filter: none;
+    }
+    .partners .sub {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 50px;
+        text-align: center;
+        cursor: pointer;
+    }
+    .partners .sub img {
+        width: 80px;
+        -webkit-transition: 0.4s ease;
+        transition: 1s ease;
+        filter: brightness(0) invert(1);
+    }
+    .partners .sub img:hover {
+        filter: none;
+
+    }
+    
+
+</style>
+<div class="partners">
+    <div class="logo">
+        <h3>الشركاء والرعاة</h3>
+    </div>
+    <div class="main">
+        <div class="card">
+            <a href="https://mfzly.com/" target="_blank">
+            <img src="{% static 'images/partner1.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://www.karanfilgroup.com/" target="_blank">
+            <img src="{% static 'images/partner2.png' %}" alt="">
+            </a>
+        </div>
+    </div>
+    <div class="sub">
+        <div class="card">
+            <a href="https://lnet.ly/" target="_blank">
+            <img src="{% static 'images/partner3.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://www.libyana.ly/" target="_blank">
+            <img src="{% static 'images/partner4.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://www.karanfilgroup.com/" target="_blank">
+            <img src="{% static 'images/partner2.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://kia.ly/" target="_blank">
+            <img src="{% static 'images/partner7.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://mfzly.com/" target="_blank">
+            <img src="{% static 'images/partner8.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://libyanspider.com/" target="_blank">
+            <img src="{% static 'images/partner5.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://kia.ly/" target="_blank">
+            <img src="{% static 'images/partner7.png' %}" alt="">
+            </a>
+        </div>
+        <div class="card">
+            <a href="https://almadar.ly/" target="_blank">
+            <img src="{% static 'images/partner6.png' %}" alt="">
+            </a>
+        </div>
+    </div>
+</div>

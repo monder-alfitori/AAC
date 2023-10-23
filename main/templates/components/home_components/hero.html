@@ -4,77 +4,104 @@
 * {
         margin: 0;
         padding: 0;
-    }
+    } 
+
         .hero {
             display: flex;
-            align-items: center; /* Center vertically */
-            justify-content: center; /* Center horizontally */
-            position: relative;
+
             height: 100vh;
-            background-image: url('https://sfcproject.tafkeer.ly/wp-content/uploads/2023/10/382605974_711120247727021_1061330152263834879_n.jpg');
-            background-size: cover;
-            background-position: center;
             direction: rtl;
             text-align: right;
             padding: 0 8%;
+
+            
         }
-        
+    @media screen and (min-width: 1600px) {
+        .hero {
+            padding: 0 16%;
+
+        }
+    }
         .overlay {
             position: absolute;
             top: 0;
             left: 0;
             width: 100%;
-            height: 100%;
+            height: 100vh;
             background-color: rgba(0, 0, 0, 0.604);
+        }
+        .hero img {
+            width: 100%;
+            height: 100vh;
+            object-fit: cover;
+            filter: brightness(50%) grayscale(40%);
         }
         
         .hero-content {
-            position: relative;
             z-index: 1;
-            padding: 20px;
+            margin-bottom: auto;
+            margin-top: 150px;
         }
         
         .hero-content h6 {
             font-size: 18px;
             color: rgb(255, 255, 255);
             font-weight: 700;
-            margin-bottom: 00px;
+            margin-bottom: 20px;
         }
         .hero-content h1 {
-            font-size: 55px;
-            margin-bottom: 40px;
+            font-size: 40px;
+            margin-bottom: 20px;
             color: #fff;
-            font-weight: 800;
-            line-height: 1.2;
+            font-weight: 700;
+            line-height: 1.3;
+            width: 80%;
+            
         }
         
         .hero-content p {
             font-size: 16px;
-            margin-bottom: 40px;
+            margin-bottom: 30px;
             width: 70%;
             color: rgba(255, 255, 255, 0.689);
             font-weight: 300;
             line-height: 2;
+            line-height: 1.8;
+            display: -webkit-box;
+        -webkit-line-clamp: 2;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
         }
-        .hero-content a {
-            font-size: 16px;
-            color: rgb(255, 255, 255);
-            font-weight: 500;
+        .hero-content .btn-3 {
             border: 1px solid #fff;
-            padding: 15px 40px;
+            transition: all 0.3s ease;
             border-radius: 10px;
-            text-decoration: none;;
+            color: #fff;
+            background: none;
+            position: relative;
+            z-index: 5;
+            width: 155px;
+            margin: auto;
+            padding: 15px 0;
+            display: block;
+            cursor: pointer;
+            font-size: 13px;
+            font-family: 'Almarai', sans-serif;
+            float: right;
         }
-        .hero-content a::hover {
-            transform: scale(2);
+        .hero-content .btn-3:hover {
+            width: 160px;
+            border: 1px solid #C11221;
+            color: #C11221;
+        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
    </style>
     <div class="hero">
-        <div class="overlay"></div>
+        <div class="overlay"><img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/383979055_711120201060359_3431761536181903524_n.jpg?stp=dst-jpg_p600x600&_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=cH1vZI_wCW4AX9AFoUO&_nc_ht=scontent.fmji2-2.fna&oh=00_AfAz4I3Q2AyTSXa9T6P1QeohRav4PgKxhSk-1CgtE82sqw&oe=6536D9E3" alt=""></div>
         <div class="hero-content">
             <h6>SSC</h6>
-            <h1>نادي السويحلي <br>رياضي، ثقافي، اجتماعي...</h1>
+            <h1>تصريحات المدرب خافيير كليمنتي في المؤتمر الصحفي قبل المواجهة المرتقبة أمام الأهلي طرابلس...</h1>
             <p>نادي السويحلي هو مؤسسة رياضية ليبية بمدينة مصراته تأسست بتاريخ 11 مايو 1944، وجاءت سنة 1951 وفيها تم تغيير اسم النادي وتحديدا بتاريخ 17 سبتمبر 1951، واعتمد هذا التاريخ ليكون تاريخ تأسيس النادي…</p>
-            <a href="">معرفة المزيد</a>
+            <button class="btn-3">قراءة المزيد</button>
         </div>
     </div>

@@ -20,40 +20,24 @@
         font-size: 35px;
         text-align: center;
     }
+    .players .sort {
+        text-align: center;
+        margin-top: 10px;
+    }
+    .players a{
+        padding: 0 10px;
+        border-left: 1px solid #C11221;
+        text-decoration: none;
+        color: #C11221;
+        font-size: 16px;
+    }
+    .players a:hover {
+        color: #2d2d2d;
+    }
     .players .football {
         margin-top: 60px;
     }
-    .players .volleyball {
-        margin-top: 60px;
-    }
 
-    .players .top h3 {
-        font-size: 22px;
-        float: right;
-    }
-    .players .top .btn-3 {
-    background: #C11221;
-    transition: all 0.3s ease;
-    border-radius: 10px;
-    color: #fff;
-    position: relative;
-    z-index: 5;
-    width: 145px;
-    margin: auto;
-    padding: 15px 0;
-    display: block;
-    border: none;
-    cursor: pointer;
-    font-size: 13px;
-    font-family: 'Almarai', sans-serif;
-    float: left;
-
-    }
-    .players .top .btn-3:hover {
-        width: 150px;
-        background: #C11221;
-        box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    }
     .players .bottom {
         display: grid;
         grid-template-columns: 1fr 1fr 1fr 1fr;
@@ -116,11 +100,14 @@
 
     <img src="{% static 'images/Slogo.png' %}" alt="">
     <h2>قائمة اللاعبين</h2>
-
+    <div class="sort">
+        <a href="">الفريق الأول</a>
+        <a href="">فريق الطائرة</a>
+        <a href="">الأكاديمية</a>
+    </div>
     <div class="football">
         <div class="top">
-            <h3>الفريق الأول</h3>
-            <button class="btn btn-3">باقي القائمة</button>
+
         </div>
 
         <div class="bottom">
@@ -192,46 +179,5 @@
         </div>
     </div>
 
-    <div class="volleyball">
-        <div class="top">
-            <h3>فريق الطائرة</h3>
-            <button class="btn btn-3">باقي القائمة</button>
-        </div>
-
-        <div class="bottom">
-            <div class="card">
-                <img src="//assets.manutd.com/AssetPicker/images/0/0/18/231/1238849/PlayerProfile_Thumbnail_Mens_Scott1691779735430.jpg" alt="">
-                <div class="info">
-                    <p>09</p>
-                    <hr>
-                    <h3>منذر الفيتوري</h3>
-                </div>
-            </div>
-            <div class="card">
-                <img src="//assets.manutd.com/AssetPicker/images/0/0/18/231/1238859/PlayerProfile_Thumbnail_Mens_Antony1691778373624.jpg" alt="">
-                <div class="info">
-                    <p>33</p>
-                    <hr>
-                    <h3>منذر الفيتوري</h3>
-                </div>
-            </div>
-            <div class="card">
-                <img src="//assets.manutd.com/AssetPicker/images/0/0/18/231/1238874/PlayerProfile_Thumbnail_Mens_Shaw1691779387783.jpg" alt="">
-                <div class="info">
-                    <p>23</p>
-                    <hr>
-                    <h3>منذر الفيتوري</h3>
-                </div>
-            </div>
-        
-            <div class="card">
-                <img src="//assets.manutd.com/AssetPicker/images/0/0/18/231/1238845/PlayerProfile_Thumbnail_Mens_Bruno1691778502502.jpg" alt="">
-                <div class="info">
-                    <p>17</p>
-                    <hr>
-                    <h3>منذر الفيتوري</h3>
-                </div>
-            </div>
-        </div>
-    </div>
+    
 </div>
