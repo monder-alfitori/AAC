@@ -35,6 +35,10 @@
         width: 60px;
         margin: auto;
     }
+    .fixtures .column a {
+        text-decoration: none;
+        color: #000;
+    }
     .fixtures .column .last {
         transition: all .3s ease-in-out;
         cursor: pointer;
@@ -130,49 +134,72 @@
     <h2>جدول الفريق</h2>
 
     <div class="column">
-        <div class="last">
-            <h3>الماضية</h3>
-            <div class="c c1 away">
-                <h6>الاثنين & 16\10\2023</h6>    
-                <h6>ملعب النهر</h6>
-                <img src="{% static 'images/libya.png' %}" alt="" class="cup">
-          
-                <div class="clubs">
-                    <div class="Sclub">
-                        <img src="{% static 'images/logo.png' %}" alt="">
-                    </div>
-                    <div class="vs">
-                        <h1>1 - 0</h1>
-                    </div>
-                    <div class="Vclub">
-                        <img src="{% static 'images/VS2.png' %}" alt="">
+        <a href="{% url 'matchDetail' lastMatch.id %}">
+            <div class="last">
+                <h3>الماضية</h3>
+                {% if lastMatch.homeORaway == 'home' %}
+                <div class="c c1">
+                {% else %}
+                <div class="c c1 away">
+                {% endif %}
+                    <h6 style="direction: ltr;" >{{lastMatch.date|date:'Y-m-d'}} & {{lastMatch.date|date:'H:i'}}</h6>    
+                    <h6>{{lastMatch.stadium}}</h6>
+                    <img src="/media/{{lastMatch.competition}}/" alt="" class="cup">
+            
+                    <div class="clubs">
+                        <div class="Sclub">
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                        </div>
+                        <div class="vs">
+                            {% if lastMatch.vResult == '' %}
+                            <h1>VS</h1>
+                            {% elif lastMatch.vResult is None %}
+                            <h1>VS</h1>
+                            {% else %}
+                            <h1>{{lastMatch.sResult}} - {{lastMatch.vResult}}</h1>
+                            {% endif %}
+                        </div>
+                        <div class="Vclub">
+                            <img src="/media/{{lastMatch.vLogo}}/" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
+        </a>
 
         <img src="{% static 'images/stadium.png' %}" alt="">
 
-        <div class="next">
-            <h3>القادمة</h3>
-            <div class="c away">
-                <h6>السبت & 03\13\2023</h6>       
-                <h6>ملعب القاهرة</h6>
-                <img src="{% static 'images/caf.svg' %}" alt="" class="cup">   
-                <div class="clubs">
-                    <div class="Sclub">
-                        <img src="{% static 'images/logo.png' %}" alt="">
-                    </div>
-                    <div class="vs">
-                        <h1>VS</h1>
-                    </div>
-                    <div class="Vclub">
-                        <img src="{% static 'images/VS3.png' %}" alt="">
+        <a href="{% url 'matchDetail' nextMatch.id %}">
+            <div class="next">
+                <h3>القادمة</h3>
+                {% if nextMatch.homeORaway == 'home' %}
+                <div class="c c1">
+                {% else %}
+                <div class="c c1 away">
+                {% endif %}
+                    <h6 style="direction: ltr;" >{{nextMatch.date|date:'Y-m-d'}} & {{nextMatch.date|date:'H:i'}}</h6>    
+                    <h6>{{nextMatch.stadium}}</h6>
+                    <img src="/media/{{nextMatch.competition}}/" alt="" class="cup">  
+                    <div class="clubs">
+                        <div class="Sclub">
+                            <img src="{% static 'images/logo.png' %}" alt="">
+                        </div>
+                        <div class="vs">
+                            {% if nextMatch.vResult == '' %}
+                            <h1>VS</h1>
+                            {% elif nextMatch.vResult is None %}
+                            <h1>VS</h1>
+                            {% else %}
+                            <h1>{{nextMatch.sResult}} - {{nextMatch.vResult}}</h1>
+                            {% endif %}
+                        </div>
+                        <div class="Vclub">
+                            <img src="/media/{{nextMatch.vLogo}}/" alt="">
+                        </div>
                     </div>
                 </div>
             </div>
-        </div>
-
+        </a>
     </div>
 
 </div>

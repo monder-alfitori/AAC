@@ -109,6 +109,100 @@
         font-weight: bold;
     }
 
+    .Poverlay {
+    position: fixed;
+    top: 0;
+    bottom: 0;
+    left:0; 
+    right: 0;
+    height: 100%;
+    width: 100vw;
+    background: rgba(0, 0, 0, 0.814);
+    transition: opacity 50ms;
+    visibility: hidden;
+    opacity: 0;
+    z-index: 98;
+    overflow-y: auto;
+    -webkit-transition: 0.2s ease-in-out, left 0.2s ease-in-out;
+    transition: opacity 0.2s ease-in-out, left 0.2s ease-in-out;
+  }
+  .Poverlay:target {
+    visibility: visible;
+    opacity: 1;
+  }
+  
+  .popup {
+    margin: 15vh auto;
+    background: #fff;
+    border-radius: 10px;
+    width: 50%;
+    position: relative;
+    transition: all 1s ease-out;
+    padding: 50px 0;
+    display: flex;
+    align-items: center;
+  }
+
+  .Poverlay h2 {
+    color: #000;
+    font-weight: 600;
+    font-size: 35px;
+    display: inline;
+    white-space: pre-line;
+  }
+  .Poverlay .close {
+    position: absolute;
+    top: 40px;
+    left: 120px;
+    transition: all 20ms;
+    font-size: 60px;
+    font-weight: 300;
+    text-decoration: none;
+    color: #d51f1f;
+    z-index: 99;
+  }
+  .Poverlay .close:hover {
+    color: #000;
+  }
+  .popup .content {
+    padding: 50px 50px;
+    display: grid;
+    grid-template-columns: 1fr 1.5fr;
+    gap: 50px;
+    align-items: center;
+}
+  .popup .image img {
+    width: 100%;
+  }
+  .popup .info h3 {
+    font-size: 25px;
+    margin-bottom: 30px;
+    font-weight: bold;
+  }
+  .popup .info .Icolumn {
+    margin-bottom: 20px;
+
+  }
+  .popup .info .Icolumn img {
+    width: 20px;
+    display: inline;
+}
+  .popup .info .Icolumn p {
+    font-size: 16px;
+    color: #666;
+    display: inline-block;
+    margin-right: 10px;
+
+}
+.popup .info .text {
+    margin-top: 30px;
+}
+.popup .info .text p {
+    font-size: 16px;
+    color: #666;
+    line-height: 1.8;
+}
+
 
 </style>
 
@@ -124,14 +218,16 @@
         </div>
 
         <div class="bottom">
+            <a href="#showPlayer">
             <div class="card">
-                <img src="//assets.manutd.com/AssetPicker/images/0/0/18/231/1238846/PlayerProfile_Thumbnail_Mens_Casemiro1691778556912.jpg" alt="">
+                <img src="{% static 'images/player1.png' %}" alt="">
                 <div class="info">
                     <p>18</p>
                     <hr>
                     <h3>منذر الفيتوري</h3>
                 </div>
             </div>
+            </a>
             <div class="card">
                 <img src="//assets.manutd.com/AssetPicker/images/0/0/18/231/1238864/PlayerProfile_Thumbnail_Mens_Rashford1691779448134.jpg" alt="">
                 <div class="info">
@@ -230,6 +326,40 @@
                     <p>17</p>
                     <hr>
                     <h3>منذر الفيتوري</h3>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+
+<div id="showPlayer" class="Poverlay">
+    <a class="close" href="#">&times;</a>
+    <div class="popup">
+        <div class="content">
+            <div class="image">
+                <img src="https://resources.premierleague.com/premierleague/photos/players/250x250/p437753.png" alt="">            
+            </div>
+            <div class="info">
+                <h3>منذر الفيتوري</h3>
+                <div class="Icolumn">
+                    <img src="{% static 'images/number.png' %}" alt="">
+                    <p>11</p>
+                </div>
+                <div class="Icolumn">
+                    <img src="{% static 'images/position.png' %}" alt="">
+                    <p>متوسط ميدان</p>
+                </div>
+                <div class="Icolumn">
+                    <img src="{% static 'images/nationality.png' %}" alt="">
+                    <p>ليبي</p>
+                </div>
+                <div class="Icolumn">
+                    <img src="{% static 'images/contract.png' %}" alt="">
+                    <p>09/11/2021</p>
+                </div>
+                <div class="text">
+                    <p>منذر الفيتوري هو لاعب كرة قدم محترف يشغل مركز الجناح الأيمن في الفريق، انضم منذر للنادي في شهر 11 من  العام 2021 ويمتد عقده حتى الواحد من شهر يونيو لسنة 2024</p>
                 </div>
             </div>
         </div>
