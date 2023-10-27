@@ -9,8 +9,6 @@
         position: relative;
         z-index: 4;
         margin-bottom: 150px;
-
-
     }
     @media screen and (min-width: 1600px) {
         .fixtures {
@@ -120,13 +118,41 @@
     }
     .fixtures .vs {
         text-align: center;
-
     }
     .fixtures .vs h1 {
         font-size: 45px;
         font-weight: bold;
+    }
 
+
+    @media screen and (min-width: 628px) and (max-width: 1200px) {
+    .fixtures {
+        padding: 0 5%;
+    }
+        .fixtures .column {
+        grid-template-columns: 3fr 1fr 3fr;
+        gap: 10px;
+    }
+    .fixtures h2 {
+        font-size: 30px;
+    }
+    .fixtures .vs h1 {
+        font-size: 35px;
+        }
+    }
+
+    @media screen and (max-width: 628px) {
+    .fixtures {
+        padding: 0 5%;
+    }
+        .fixtures .column {
+        grid-template-columns: 1fr;
+        gap: 20px;
+    }
+    .fixtures h2 {
+        font-size: 30px;
         
+    }
     }
 </style>
 
@@ -134,7 +160,7 @@
     <h2>جدول الفريق</h2>
 
     <div class="column">
-        <a href="{% url 'matchDetail' lastMatch.id %}">
+        <a onclick="openLoaderPage()" hx-get="{% url 'matchDetail' lastMatch.id %}">
             <div class="last">
                 <h3>الماضية</h3>
                 {% if lastMatch.homeORaway == 'home' %}
@@ -169,7 +195,7 @@
 
         <img src="{% static 'images/stadium.png' %}" alt="">
 
-        <a href="{% url 'matchDetail' nextMatch.id %}">
+        <a onclick="openLoaderPage()" hx-get="{% url 'matchDetail' nextMatch.id %}">
             <div class="next">
                 <h3>القادمة</h3>
                 {% if nextMatch.homeORaway == 'home' %}

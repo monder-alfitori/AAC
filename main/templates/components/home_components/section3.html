@@ -37,7 +37,6 @@
     font-size: 13px;
     float: left;
     font-family: 'Almarai', sans-serif;
-
     }
     .latest .btn-3:hover {
         width: 160px;
@@ -110,114 +109,68 @@
         -webkit-line-clamp: 1;
         -webkit-box-orient: vertical;
         overflow: hidden;
+        
     }
 
+    @media screen and (max-width: 1200px) {
+    .latest {
+        padding: 50px 5% 50px 5%;
+    }
+    .latest .cards {
+        grid-template-columns: 1fr 1fr;
+    }
+}
+
+    @media screen and (max-width: 628px) {
+    .latest {
+        padding: 50px 5% 100px 5%;
+    }
+    .latest h2 {
+        font-size: 30px;
+        text-align: center;
+        float: none;
+    }
+    .latest .btn-3 {
+        position: absolute;
+
+        bottom: 0;
+        left: 50%;
+    transform: translate(-50%, 0);
+    }
+    .latest .cards {
+        grid-template-columns: 1fr;
+    }
+    .latest .info h3 {
+
+        -webkit-line-clamp: 2;
+    }
+    
+
+}
 </style>
 
 
 <div class="latest">
     <h2>آخر الأخبار المتعلقة بالنادي</h2>
-    <a href="{% url 'news' %}"><button class="btn btn-3">عرض المزيد</button></a>
+    <a onclick="openLoaderPage()" hx-get="{% url 'news' %}"><button class="btn btn-3">عرض المزيد</button></a>
     <div class="cards">
 
-        <a href="{% url 'newsDetail' %}">
+        {% for obj in news|slice:"1:6" %}
+        <a href="{% url 'newsDetail' obj.id %}">
             <div class="card">
                 <div class="img">
-                    <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/392864799_721224886716557_889377659395130590_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=4vCWMV_nXiUAX95ki42&_nc_ht=scontent.fmji2-1.fna&oh=00_AfDRyQCQsv8-XmBcCuayY2x7ivSmiA5Ev3uahAWEdWyghg&oe=653ACAD2" alt="">
+                    <img src="/media/{{obj.image}}/" alt="">
                 </div>
                 <div class="info">
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>نشاطات</h6>
-                        <p>منذ يومين</p>
+                        <h6>{{obj.category}}</h6>
+                        <p style="direction:ltr;">{{obj.created_at|timesince}} ago</p>
                     </div>
-                    <h3>زيارة أعضاء الإدارة والطاقم الفني للناشط السابق للنادي</h3>
-
+                    <h3>{{obj.title}}</h3>
                 </div>
             </div>
         </a>
-
-        <a href="{% url 'newsDetail' %}">
-            <div class="card">
-                <div class="img">
-                    <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/392793806_721224643383248_688576503305398_n.jpg?_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=rn35xXjOZDgAX8egKbS&_nc_ht=scontent.fmji2-1.fna&oh=00_AfCMnrqcZRrMV7khHBGl5shdqD2rv3YfWZtD9FOFlsZdoQ&oe=653C6AD7" alt="">
-                </div>
-                <div class="info">
-                    <div class="top">
-                        <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>استعدادت</h6>
-                        <p>منذ يومين</p>
-                    </div>
-                    <h3>وصول بعثة فريق الطائرة إلى مطار القاهرة</h3>
-                </div>
-            </div>
-        </a>
-
-
-        <a href="{% url 'newsDetail' %}">
-            <div class="card">
-                <div class="img">
-                    <img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/393172750_722052769967102_8134003078689556262_n.jpg?stp=dst-jpg_p960x960&_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=lDpr4A5m4Y0AX9aPNP6&_nc_ht=scontent.fmji2-2.fna&oh=00_AfAQc1OiKIuWrHN0CtjvA8y8R4DWS6AIq54HYOvgTLugpw&oe=653C657C" alt="">
-                </div>
-                <div class="info">
-                    <div class="top">
-                        <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>استعدادت</h6>
-                        <p>3 أيام مضت</p>
-                    </div>
-                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
-                </div>
-            </div>
-        </a>
-
-
-        <a href="{% url 'newsDetail' %}">
-            <div class="card">
-                <div class="img">
-                    <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/393357595_722702566568789_12754013294241810_n.jpg?_nc_cat=100&ccb=1-7&_nc_sid=5f2048&_nc_ohc=AyN4yeYL4y4AX-J2jFr&_nc_ht=scontent.fmji2-1.fna&oh=00_AfC8zOcE6DGtoTL5E23W70S83l5qFc2hvDfx9jp6iUEHAA&oe=653C02DC" alt="">
-                </div>
-                <div class="info">
-                    <div class="top">
-                        <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>استعدادت</h6>
-                        <p>منذ يومين</p>
-                    </div>
-                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
-                </div>
-            </div>
-        </a>
-
-        <a href="{% url 'newsDetail' %}">
-            <div class="card">
-                <div class="img">
-                    <img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/392948257_723758499796529_9195579234308961568_n.jpg?_nc_cat=109&ccb=1-7&_nc_sid=5f2048&_nc_ohc=6PdQTMpoMrgAX-0qrDj&_nc_oc=AQnZRWivM4olAZq1NmTtQpUtePWwROPHXo2kn0wTHPDpZKkqgVNlYHEpn49wAoU2k8E&_nc_ht=scontent.fmji2-2.fna&oh=00_AfAOXFgyD6yj8feRMff9CCchceVBDHbimmrwzV4OfHUm8g&oe=653AC511" alt="">
-                </div>
-                <div class="info">
-                    <div class="top">
-                        <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>استعدادت</h6>
-                        <p>منذ يومين</p>
-                    </div>
-                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
-                </div>
-            </div>
-        </a>
-      
-        <a href="{% url 'newsDetail' %}">
-            <div class="card">
-                <div class="img">
-                    <img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/394520187_723369019835477_557172719512232418_n.jpg?_nc_cat=102&ccb=1-7&_nc_sid=5f2048&_nc_ohc=NmSVHj2YqK8AX-rDeig&_nc_ht=scontent.fmji2-2.fna&oh=00_AfA2b7iGQQdhAwxQ1mqpgv0r3jrLJxjAPykl8KyZFAytXA&oe=653BE732" alt="">
-                </div>
-                <div class="info">
-                    <div class="top">
-                        <img src="{% static 'images/news.png' %}" alt="">
-                        <h6>استعدادت</h6>
-                        <p>منذ يومين</p>
-                    </div>
-                    <h3>الحصة التدريبية قبل مواجهة الاتحاد المرتقبة</h3>
-                </div>
-            </div>
-        </a>
-
+        {% endfor %}
     </div>
 </div>

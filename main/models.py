@@ -2,40 +2,62 @@ from django.db import models
 
 # Create your models here.
 class News(models.Model):
+    category_choices = (
+        ("الفريق الأول", "first team"),
+        ("الطائرة", "volleyball"),
+        ("الأكاديمية", "academy"),
+        ("النادي", "club",),
+    )
     title = models.CharField(max_length=2000)
     text = models.TextField()
     image = models.ImageField(upload_to='images/%y/%m/%d', null=True, blank=True)
     created_at = models.DateTimeField(auto_now_add=True)
-
-    def _str__(self):
-        return self.title
+    is_hero = models.BooleanField(default=False, null=True)
+    category = models.CharField(max_length=100, choices=category_choices)
+    
+    def __str__(self):
+        return self.title   
 
 class Media(models.Model):
+    category_choices = (
+        ("الملخصات", "highligts"),
+        ("الأرشيف", "archieve"),
+        ("لقاءات إعلامية", "meetings"),
+        ("الطائرة", "volleyball",),
+    )
     title = models.CharField(max_length=2000)
     video = models.FileField(upload_to='videos/%y/%m/%d', null=True)
+    thumbnail = models.ImageField(upload_to='images/%y/%m/%d', null=True, blank=False)
     created_at = models.DateTimeField(auto_now_add=True)
-
-    def _str__(self):
-        return self.title
+    category = models.CharField(max_length=100, choices=category_choices)
+    
+    def __str__(self):
+        return self.title   
 
 class Player(models.Model):
     position_choices = (
-        ("GK", "حارس مرمى"),
-        ("DF", "مدافع"),
-        ("MD", "متوسط ميدان"),
-        ("ST", "مهاجم"),
-        ("M", "المدرب"),
-        ("S", "الطاقم الفني"),
+        ( "حارس مرمى", "GK"),
+        ("مدافع", "DF"),
+        ("متوسط ميدان", "MD"),
+        ("مهاجم", "ST"),
+        ("المدرب", "M"),
+        ("الطاقم الفني", "S"),
+    )
+    category_choices = (
+        ("الفريق الأول", "first team"),
+        ("الطائرة", "volleyball"),
     )
     name = models.CharField(max_length=1000)
+    category = models.CharField(max_length=100, choices=category_choices, null=True)
+    image = models.ImageField(upload_to='images/%y/%m/%d', null=True, blank=True)
     number = models.CharField(max_length=2)
     nationality = models.CharField(max_length=100)
     position = models.CharField(max_length=100, choices=position_choices)
     join = models.DateField()
     text = models.TextField()
     
-    def _str__(self):
-        return self.name
+    def __str__(self):
+        return self.name   
 
 
 class Match(models.Model):

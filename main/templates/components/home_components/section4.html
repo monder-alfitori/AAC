@@ -92,8 +92,8 @@
         height: 100%;
         object-fit: cover;
         border-radius: 12px;
-        -webkit-transition: 0.4s ease;
-        transition: 0.4s ease;
+        -webkit-transition: 1s ease;
+        transition:1s ease;
         filter: brightness(80%);
     }
     .media .bottom .right .play {
@@ -155,6 +155,7 @@
         height: 170px;
         width: 100%;
         overflow: hidden;
+        border-radius: 12px;
     }
     .media .bottom .left .thump img {
         width: 100%;
@@ -162,8 +163,8 @@
         object-fit: cover;
         border-radius: 12px;
         display: inline;
-        -webkit-transition: 0.4s ease;
-        transition: 0.4s ease;
+        -webkit-transition: 1s ease;
+        transition:1s ease;
         filter: brightness(80%);
 
     }
@@ -204,7 +205,7 @@
 
 
 
-    .Poverlay {
+    .Moverlay {
     position: fixed;
     top: 0;
     bottom: 0;
@@ -220,33 +221,26 @@
     overflow-y: auto;
     -webkit-transition: 0.2s ease-in-out, left 0.2s ease-in-out;
     transition: opacity 0.2s ease-in-out, left 0.2s ease-in-out;
+    display: flex;
+    align-items: center;
   }
-  .Poverlay:target {
+  .Moverlay:target {
     visibility: visible;
     opacity: 1;
   }
   
-  .popup {
-    margin: 15vh auto;
+  .Moverlay .popup {
+    margin: auto auto;
     background: #fff;
     border-radius: 10px;
     width: 50%;
-    max-height: 60vh;
     position: relative;
     transition: all 1s ease-out;
-
     display: flex;
     align-items: center;
   }
 
-  .Poverlay h2 {
-    color: #000;
-    font-weight: 600;
-    font-size: 35px;
-    display: inline;
-    white-space: pre-line;
-  }
-  .Poverlay .close {
+  .Moverlay .close {
     position: absolute;
     top: 40px;
     left: 120px;
@@ -257,117 +251,238 @@
     color: #d51f1f;
     z-index: 99;
   }
-  .Poverlay .close:hover {
+  .Moverlay .close:hover {
     color: #000;
   }
-  .popup {
 
-}
-  .popup video {
+.Moverlay .popup video {
     width: 100%;
+    max-height: 80vh;
+    border-radius: 10px;
   }
 
+
+  @media screen and (min-width: 628px) and (max-width: 1200px) {
+    .media {
+        padding: 50px 5%;
+    }
+    .media .top .btn-3 {
+    display: none;
+    }
+    .media .top h2 {
+        font-size: 30px;
+        text-align: center;
+        float: none;
+    }
+    .media .bottom {
+        grid-template-columns: 1fr;
+        gap: 60px;
+    }
+    .media .bottom .right .all {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .media .bottom .right .thump {
+        height: 450px;
+    }
+    .media .bottom .right h3 {
+        font-size: 25px;
+    }
+    .media .bottom .right .logo {
+        width: 15px;
+    }
+    .media .bottom .right p {
+        font-size: 18px;
+    }
+
+    .media .bottom .left .card {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 0;
+    }
+    .media .bottom .left .card .left {
+       padding-top: 50px;
+    }
+    
+    .media .bottom .left h3 {
+        font-size: 22px;
+    }
+    .media .bottom .left .logo {
+        width: 15px;
+    }
+    .media .bottom .left p {
+        font-size: 18px;
+    }
+
+
+    .media .bottom .left hr {
+        width: 100%;
+        margin: 20px 0;
+    }
+
+    .media .bottom .left .thump {
+        height: 240px;
+
+    }
+
+
+
+    .Moverlay .popup {
+    border-radius: 8px;
+    width: 90%;
+  }
+  .Moverlay .close {
+    top: 40px;
+    left: 5%;
+  }
+    }
+
+  @media screen and (max-width: 628px) {
+    .media {
+        padding: 50px 5%;
+    }
+    .media .top .btn-3 {
+    display: none;
+    }
+    .media .top h2 {
+        font-size: 30px;
+        text-align: center;
+        float: none;
+    }
+    .media .bottom {
+        grid-template-columns: 1fr;
+        gap: 40px;
+    }
+    .media .bottom .right .all {
+        margin-top: 40px;
+        margin-bottom: 20px;
+    }
+    .media .bottom .right .thump {
+        height: 200px;
+    }
+    .media .bottom .right h3 {
+        font-size: 18px;
+        margin-top: 20px;
+    }
+    .media .bottom .right p {
+        font-size: 12px;
+        margin-top: 10px;
+        font-weight: 300;
+
+    }
+    .media .bottom .left .card {
+        grid-template-columns: 1.2fr 1fr;
+        gap: 0;
+    }
+    .media .bottom .left hr {
+        width: 100%;
+    }
+    .media .bottom .left .thump {
+        height: 100px;
+        border-radius: 8px;
+    }
+    .media .bottom .left .thump img {
+        border-radius: 8px;
+
+    }
+    .media .bottom .left .play {
+        width: 25px;
+    }
+    .media .bottom .left h3 {
+        font-size: 15px;
+        -webkit-line-clamp: 2;
+        line-height: 1.5;
+    }
+    .media .bottom .left p {
+        font-size: 12px;
+        display: -webkit-box;
+        -webkit-line-clamp: 1;
+        -webkit-box-orient: vertical;
+        overflow: hidden;
+        margin-top: 10px;
+        font-weight: 300;
+    }
+    .media .bottom .left .logo {
+        display: none;      
+    }
+
+    .Moverlay .popup {
+    border-radius: 8px;
+    width: 90%;
+  }
+  .Moverlay .close {
+    top: 40px;
+    left: 5%;
+  }
+    }
 </style>
 
 <div class="media">
     <div class="top">
         <h2>ميديا السويحلي</h2>
-        <button class="btn btn-3">عرض الكل</button>
+        <a onclick="openLoaderPage()" hx-get="{% url 'media' %}"><button class="btn btn-3">عرض الكل</button></a>
     </div>
 
     <div class="bottom">
         <div class="right">
-            <a href="#showMedia">
+            {% for obj in media|slice:":1" %}
+            <a href="#showMedia{{obj.id}}">
                 <div class="card">
                     <div class="thump">
-                        <img src="{% static 'images/thum1.jpg' %}" alt="">
+                        <img src="/media/{{obj.thumbnail}}/" alt="">
                     </div>
                     <img src="{% static 'images/play.png' %}" alt="" class="play">
-                    <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                    <h3>{{obj.title}}</h3>
                     <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                    <p>منذ 3 ساعات</p>
+                    <p style="direction: ltr;" >{{obj.created_at|timesince}} ago</p>
                 </div>
             </a>
+            <div id="showMedia{{obj.id}}" class="Moverlay">
+                <a class="close" onclick="closePopup()" href="#">&times;</a>
+                <div class="popup">
+                    <video controls id="video">
+                        <source src="/media/{{obj.video}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                </div>
+            </div>
+            {% endfor %}
+            <a onclick="openLoaderPage()" hx-get="{% url 'media' %}">
             <div class="all">
                 <h4>عرض الكل</h4>
                 <img src="{% static 'images/rightarrow.png' %}" alt="">
             </div>
+            </a>
         </div>
         <div class="left">
-            <a href="#showMedia">
+            {% for obj in media|slice:"1:5" %}
+            <a href="#showMedia{{obj.id}}">
                 <div class="card">
                     <div class="right">
                         <div class="thump">
-                            <img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/386691699_714501297388916_6783386127273726806_n.jpg?_nc_cat=101&ccb=1-7&_nc_sid=5f2048&_nc_ohc=mbD6uuQPpoEAX_utIwl&_nc_ht=scontent.fmji2-2.fna&oh=00_AfDA_69tgs_xIaLBNHCHTDLhKLH88Yek22s94iHIQkWzSg&oe=6534AE7B" alt="">
+                            <img src="/media/{{obj.thumbnail}}/" alt="">
                         </div>
                         <img src="{% static 'images/play.png' %}" alt="" class="play">
                     </div>
                     <div class="left">
-                        <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
+                        <h3>{{obj.title}}</h3>
                         <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                        <p>منذ 3 ساعات</p>
+                        <p style="direction: ltr;">{{obj.created_at|timesince}} ago</p>
                     </div>
                 </div>
             </a>
+            <div id="showMedia{{obj.id}}" class="Moverlay">
+                <a class="close" onclick="closePopup()" href="#">&times;</a>
+                <div class="popup">
+                    <video controls id="video">
+                        <source src="/media/{{obj.video}}" type="video/mp4">
+                        Your browser does not support the video tag.
+                      </video>
+                </div>
+            </div>
             <hr>
-            <a href="#showMedia">
-                <div class="card">
-                    <div class="right">
-                        <div class="thump">
-                            <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/377678049_710955377743508_1668710815833119256_n.jpg?stp=dst-jpg_p843x403&_nc_cat=105&ccb=1-7&_nc_sid=5f2048&_nc_ohc=OnO38BscElQAX--GHWx&_nc_ht=scontent.fmji2-1.fna&oh=00_AfBUjxqC-dnE98nre7erd8VEqHKv4VvA67pdBP6TdMMHIA&oe=6533B060" alt="">
-                        </div>
-                        <img src="{% static 'images/play.png' %}" alt="" class="play">
-                    </div>
-                    <div class="left">
-                        <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
-                        <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                        <p>منذ 3 ساعات</p>
-                    </div>
-                </div>
-            </a>
-            <hr>
-            <a href="#showMedia">
-                <div class="card">
-                    <div class="right">
-                        <div class="thump">
-                            <img src="https://scontent.fmji2-1.fna.fbcdn.net/v/t39.30808-6/376879487_708583397980706_6763798955867679505_n.jpg?_nc_cat=107&ccb=1-7&_nc_sid=5f2048&_nc_ohc=GvcmeP2fdhEAX_MM01u&_nc_ht=scontent.fmji2-1.fna&oh=00_AfAbuMnkMgXtJ5G-EI3FtvviWzAj7WSfcBTOUXff8sRCgQ&oe=65349202" alt="">
-                        </div>
-                        <img src="{% static 'images/play.png' %}" alt="" class="play">
-                    </div>
-                    <div class="left">
-                        <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
-                        <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                        <p>منذ 3 ساعات</p>
-                    </div>
-                </div>
-            </a>
-            <hr>
-            <a href="#showMedia">
-                <div class="card">
-                    <div class="right">
-                        <div class="thump">
-                            <img src="{% static 'images/thum1.jpg' %}" alt="">
-                        </div>
-                        <img src="{% static 'images/play.png' %}" alt="" class="play">
-                    </div>
-                    <div class="left">
-                        <h3>ملخص مباراة السويحلي والأهلي بنغازي - الجولة 12 من الدوري 2007</h3>
-                        <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                        <p>منذ 3 ساعات</p>
-                    </div>
-                </div>
-            </a>
+            {% endfor %}
         </div>
     </div>
 
 </div>
 
-<div id="showMedia" class="Poverlay">
-    <a class="close" href="#">&times;</a>
-    <div class="popup">
-        <video controls>
-            <source src="{% static 'images/video.mp4' %}" type="video/mp4">
-            Your browser does not support the video tag.
-          </video>
-    </div>
-  </div>

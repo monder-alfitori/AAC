@@ -8,7 +8,6 @@
         padding: 0 20%;
         margin-bottom: 150px;
         position: relative;
-
     }
     @media screen and (min-width: 1600px) {
         .Newsmain {
@@ -17,11 +16,10 @@
     }
 
     .Newsmain .heading {
-        margin-bottom: 60px;
+        margin-bottom: 40px;
     }
     .Newsmain .heading h1 {
         font-size: 35px;
-
         font-weight: bold;
     }
     .Newsmain .heading h5 {
@@ -43,7 +41,18 @@
     .Newsmain .image img {
         width: 100%;
         border-radius: 10px;
-        
+    }
+
+    @media screen and (max-width: 1200px) {
+    .Newsmain { 
+        padding: 0 5%;
+    }
+    .Newsmain .heading h1 {
+        font-size: 25px;
+    }
+    .Newsmain .text p {
+        text-align: justify;
+    }
     }
 
 </style>
@@ -51,21 +60,15 @@
 
 <div class="Newsmain">
     <div class="heading">
-        <h5>الاثنين & 23\10\2023</h5>
-        <h1>تصريحات المدرب خافيير كليمنتي في المؤتمر الصحفي قبل المواجهة المرتقبة أمام الأهلي طرابلس</h1>
+        <h5>{{news.created_at|date:'Y-m-d'}}</h5>
+        <h1>{{news.title}}</h1>
     </div>
 
     <div class="text">
-        <p>🔴🇱🇾🇲🇨 ودياً .. " السويحلي " بطل ليبيا يلتقي الترجي 🔴🇲🇨🇱🇾
-            💎 مباراة ودية بمعسكر فريق السويحلي بتونس
-            🔴| السويحلي  🆚  الترجي
-            ‏🗓 | الاربعاء 18-10-2023م
-            ‏🕘 | الساعة 19:00
-            ‏🏟 | قاعة محمد الزواوي بنادي الترجي
-            🤲 كل التوفيق لفريق طائرة نادينا الغالي 🤲</p>
+        <p>{{news.text}}</p>
     </div>
 
     <div class="image">
-        <img src="https://scontent.fmji2-2.fna.fbcdn.net/v/t39.30808-6/393175056_723941199778259_5636754618666903759_n.jpg?_nc_cat=103&ccb=1-7&_nc_sid=5f2048&_nc_ohc=0EbqGrYeJbMAX9e9ODv&_nc_ht=scontent.fmji2-2.fna&oh=00_AfDaigK8IPHkdf0CY33PURu-Kpa0OefyaK10xUwK-O9IAQ&oe=653C30DE" alt="">
+        <img src="/media/{{news.image}}/" alt="">
     </div>
 </div>

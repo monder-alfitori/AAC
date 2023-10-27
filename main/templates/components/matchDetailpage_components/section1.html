@@ -101,6 +101,36 @@
         color: #fff;
     }
 
+
+
+    @media screen and (max-width: 628px) {
+    #MatchMain .c {
+            width: 90%;   
+            margin-top: 10vh;  
+    }
+    #MatchMain .clubs {
+
+        gap: 5px;
+    }
+    #MatchMain .Sclub img {
+        width: 70px;
+    }
+    #MatchMain .Sclub h2 {
+        font-size: 14px;
+    }
+    #MatchMain .Vclub img {
+        width: 70px;
+    }
+    #MatchMain .Vclub h2 {
+        font-size: 14px;
+    }
+    #MatchMain .result p {
+        font-size: 12px;
+    }
+    #MatchMain .vs h1 {
+        font-size: 50px;
+    }
+    }
    </style>
 
    <div class="MatchMain" id="MatchMain">
@@ -135,7 +165,7 @@
                     </div>
                     <div class="Vclub">
                         <img src="/media/{{match.vLogo}}/" alt="">
-                        <h2>الزمالك</h2>
+                        <h2>{{match.vName}}</h2>
                         <div class="result">
                             <p>{{match.vGoals|linebreaks}}</p>
                         </div>

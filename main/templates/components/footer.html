@@ -14,8 +14,8 @@
     }
     .footer .top {
         display: grid;
-        grid-template-columns: 5% 10% 75%;
-        gap: 100px;
+        grid-template-columns: 8% 13% 70%;
+        gap: 50px;
     }
     .footer .logo {
 
@@ -109,6 +109,39 @@
         color: #d2d2d2;
         font-weight: 700;
     }
+
+
+
+
+
+
+    @media screen and (max-width: 1200px) {
+    .footer {
+        padding: 50px 5% 20px 5%;
+    }
+    .footer .top {
+        display: grid;
+        grid-template-columns: 1fr;
+        gap: 50px;
+        text-align: center;
+    }    
+    .footer .brand .social {
+        display: grid;
+        grid-template-columns: 1fr 1fr 1fr 1fr;
+        gap: 00px;
+        width: 80%;
+        margin: auto;
+
+        margin-left: 20px;
+    }
+    .footer .brand .social .facebook:hover h3 {
+        display: none;
+        
+    }
+    .footer .links {
+        display: none;
+    }
+    }
 </style>
 
 <div class="footer">
@@ -118,28 +151,28 @@
         </div>
         <div class="brand">
             <div class="social">
-                <a href="">
+                <a onclick="openLoaderPage()" hx-get="">
                 <div class="facebook">
                     <img src="{% static 'images/facebook.png' %}" alt="">
                     <h3>@Swehlysfc</h3>
                 </div>
                 </a>
     
-                <a href="">
+                <a onclick="openLoaderPage()" hx-get="">
                     <div class="facebook">
                         <img src="{% static 'images/tiktok.png' %}" alt="">
                         <h3>@Swehlysfc</h3>
                     </div>
                 </a>
                     
-                <a href="">
+                <a onclick="openLoaderPage()" hx-get="">
                     <div class="facebook">
                         <img src="{% static 'images/instagram.png' %}" alt="">
                         <h3>@Swehlysfc</h3>
                     </div>
                 </a>
                 
-                <a href="">
+                <a onclick="openLoaderPage()" hx-get="">
                     <div class="facebook">
                         <img src="{% static 'images/x.png' %}" alt="">
                         <h3>@Swehlysfc</h3>
@@ -151,47 +184,47 @@
     
         <div class="links">
             <div class="page">
-                <a href=""><h3>آخر الأخبار</h3></a>
+                <a onclick="openLoaderPage()" hx-get=""><h3>آخر الأخبار</h3></a>
                 <div class="shorts">
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أخبار الفريق الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أخبار الطائرة</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أخبار الأكاديمة</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">تطورات النادي</h3></a>
                 </div>
             </div>
     
             <div class="page">
-                <a href=""><h3>ميديا</h3></a>
+                <a onclick="openLoaderPage()" hx-get=""><h3>ميديا</h3></a>
                 <div class="shorts">
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">ملخصات</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أرشيف</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">لقاءات إعلامية</h3></a>
                 </div>
             </div>
     
             <div class="page">
-                <a href=""><h3>الفريق</h3></a>
+                <a onclick="openLoaderPage()" hx-get=""><h3>الفريق</h3></a>
                 <div class="shorts">
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">الفريق الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">فريق الطائرة</h3></a>
                 </div>
             </div>
     
             <div class="page">
-                <a href=""><h3>المنافسات</h3></a>
+                <a onclick="openLoaderPage()" hx-get=""><h3>المنافسات</h3></a>
                 <div class="shorts">
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'home' %}matchDetail/2/"><h3 class="link">المباراة الماضية</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'home' %}matchDetail/1/"><h3 class="link">المباراة القادمة</h3></a>
                 </div>
             </div>
     
             <div class="page">
-                <a href=""><h3>عن النادي</h3></a>
+                <a onclick="openLoaderPage()" hx-get=""><h3>عن النادي</h3></a>
                 <div class="shorts">
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
-                    <a href=""><h3 class="link">الرابط الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">نبذة تعريفية</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">الإنجازات والبطولات</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">الرؤية المستقبلية</h3></a>
+                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">التواصل</h3></a>
                 </div>
             </div>
         </div>

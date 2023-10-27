@@ -1,0 +1,36 @@
+{% load static %}
+<style>
+    .placeholder {
+        display: none;
+        position: fixed;
+        top: 0;
+        right: 0;
+        z-index: 99;
+        width: 100%;
+        height: 100vh;
+        background-color: #fff;
+        align-items: center;
+        text-align: center;
+    }
+    .placeholder .image {
+        margin: auto auto;
+    }
+    .placeholder img {
+        width: 300px;
+    }
+</style>
+
+<div class="placeholder" id="placeholder">
+    <div class="image">
+        <img src="{% static 'images/loader.gif' %}" alt="">
+    </div>
+</div>
+
+
+<script>
+    function openLoaderPage() {
+        document.getElementById("placeholder").style.display = "flex";
+        document.getElementById("forplaceholder").style.display = "none";
+
+      }
+</script>

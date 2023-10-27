@@ -39,7 +39,6 @@
         filter: brightness(0) invert(1);
         -webkit-transition: 0.4s ease;
         transition: 1s ease;
-
     }
     .partners .main img:hover {
         filter: none;
@@ -62,6 +61,32 @@
 
     }
     
+
+    @media screen and (max-width: 628px) {
+    .partners {
+        padding: 70px 5% 100px 5%;
+        position: relative;
+        background: #C11221;
+
+    }
+        .partners .logo h3 {
+        font-size: 30px;
+    }
+    .partners .main {
+        grid-template-columns: 1fr 1fr;
+        gap: 50px;
+    }
+    .partners .main img {
+        width: 100px;
+    }
+    .partners .sub {
+        grid-template-columns: 1fr 1fr 1fr;
+        gap: 30px;
+    }
+    .partners .sub img {
+        width: 60px;
+    }
+    }
 
 </style>
 <div class="partners">

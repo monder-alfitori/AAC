@@ -1,0 +1,94 @@
+{% load static %}
+<!doctype html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <script src="https://unpkg.com/htmx.org@1.5.0"
+    integrity="sha384-oGA+prIp5Vchu6we2YkI51UtVzN9Jpx2Z7PnR1I78PnZlN8LkrCT4lqqqmDkyrvI"
+    crossorigin="anonymous"></script>
+    <link href="{% static 'css/style.css' %}" rel="stylesheet">
+    <link rel="icon" type="image/x-icon" href="{% static 'images/logo.png' %}">
+    <link href='https://unpkg.com/boxicons@2.0.7/css/boxicons.min.css' rel='stylesheet'>
+    <link href="https://fonts.googleapis.com/css2?family=Almarai:wght@300;400;700;800&family=Cairo:wght@200;400;600;700&family=El+Messiri:wght@500;700&family=Tajawal:wght@300;400;500;700&display=swap" rel="stylesheet">
+    <title>Swehly SSC</title>
+  </head>
+  <body>
+     
+    {% include 'components/placeholderPage.html' %}
+
+    {% block content %}
+
+    {% endblock content %}
+    
+
+    <script>
+        function executeMainScript() {
+          $('.close').click(function(){
+            $('video').each(function(){
+              $(this).get(0).pause();
+            });
+          });
+      
+          const Nlink = document.getElementById("Nlink");
+          const navbar = document.getElementById("full-nav");
+          const navIcon = document.getElementById("nav-icon");
+      
+          Nlink.addEventListener("click", function() {
+            navbar.style.display = (navbar.style.display === "none") ? "block" : "none";
+          });
+          navIcon.addEventListener("click", function() {
+            navbar.style.display = (navbar.style.display === "") ? "block" : "";
+          });
+      
+          $(".nav-icon").click(function() {
+            $(".full-nav").addClass("open");
+          });
+          $(".nav-close").click(function() {
+            $(".full-nav").removeClass("open");
+          });
+          $(window).scroll(function() {
+            var sc = $(window).scrollTop();
+            if (sc > 100) {
+              $(".nav").addClass("sticky");
+            } else {
+              $(".nav").removeClass("sticky");
+            }
+          });
+      
+          const navbarElement = document.querySelector('.navbar');
+          const navbarIconElement = document.querySelector('.naviconimage');
+      
+          window.addEventListener('scroll', () => {
+            if (window.scrollY > 100) {
+              navbarElement.style.backgroundColor = '#fff';
+              navbarIconElement.style.filter = 'none';
+            } else {
+              navbarElement.style.backgroundColor = '';
+              navbarIconElement.style.filter = '';
+            }
+          });
+        
+      
+          // Call the function when the DOM is ready
+          document.addEventListener('DOMContentLoaded', changeNavbarColorOnScroll);
+      
+          document.body.addEventListener('htmx:configRequest', (event) => {
+            event.detail.headers['X-CSRFToken'] = '{{ csrf_token }}';
+          });
+        }
+      
+        // Call the function initially
+        executeMainScript();
+      
+        // Add an event listener for HTMX transition
+        document.addEventListener('htmx:afterSwap', function(event) {
+          executeMainScript();
+        });
+      </script>
+      
+      
+      
+  </body>
+</html>
