@@ -20,8 +20,8 @@ class News(models.Model):
 
 class Media(models.Model):
     category_choices = (
-        ("الملخصات", "highligts"),
-        ("الأرشيف", "archieve"),
+        ("الملخصات", "highlights"),
+        ("الأرشيف", "archive"),
         ("لقاءات إعلامية", "meetings"),
         ("الطائرة", "volleyball",),
     )
