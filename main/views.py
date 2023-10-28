@@ -49,9 +49,9 @@ def media(request):
     media = Media.objects.all().order_by('-created_at')
     sort_by =  request.GET.get('sort')
 
-    if sort_by == 'highligts':
+    if sort_by == 'highlights':
         media = media.filter(category="الملخصات")
-    elif sort_by == 'archieve':
+    elif sort_by == 'archive':
         media = media.filter(category="الأرشيف")
     elif sort_by == 'meetings':
         media = media.filter(category="لقاءات إعلامية")
