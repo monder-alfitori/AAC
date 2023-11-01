@@ -138,7 +138,6 @@
             font-size: 25px;
             width: 95%;
             -webkit-line-clamp: 4;
-        -webkit-line-clamp: none;
         }
         
         .hero-content p {
@@ -148,6 +147,21 @@
         }
     }
 
+
+    @media screen and (max-height: 550px) {
+        .hero {
+            height: 95vh;
+        }
+        .overlay {
+            height: 95vh;
+        }
+        .hero img {
+            height: 95vh;
+        }
+        .hero-content h1 {
+        -webkit-line-clamp: 3;
+        }
+}
 
 
    </style>

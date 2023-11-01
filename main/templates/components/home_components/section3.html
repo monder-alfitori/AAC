@@ -14,6 +14,9 @@
             padding: 0 16%;
         }
     }
+    .latest .newsImage {
+        display: none;
+    }
     .latest h2 {
         font-size: 35px;
         font-weight: bold;
@@ -125,6 +128,13 @@
     .latest {
         padding: 50px 5% 100px 5%;
     }
+    .latest .newsImage {
+        display: block;
+        width: 50px;
+        margin: auto;
+        display: block;
+        margin-bottom: 10px;
+    }
     .latest h2 {
         font-size: 30px;
         text-align: center;
@@ -151,12 +161,13 @@
 
 
 <div class="latest">
+    <img class="newsImage" src="{% static 'images/news.png' %}" alt="">
     <h2>آخر الأخبار المتعلقة بالنادي</h2>
     <a onclick="openLoaderPage()" hx-get="{% url 'news' %}"><button class="btn btn-3">عرض المزيد</button></a>
     <div class="cards">
 
         {% for obj in news|slice:"1:6" %}
-        <a href="{% url 'newsDetail' obj.id %}">
+        <a onclick="openLoaderPage()" hx-get="{% url 'newsDetail' obj.id %}">
             <div class="card">
                 <div class="img">
                     <img src="/media/{{obj.image}}/" alt="">
@@ -165,7 +176,7 @@
                     <div class="top">
                         <img src="{% static 'images/news.png' %}" alt="">
                         <h6>{{obj.category}}</h6>
-                        <p style="direction:ltr;">{{obj.created_at|timesince}} ago</p>
+                        <p>منذ {{obj.created_at|timesince}}</p>
                     </div>
                     <h3>{{obj.title}}</h3>
                 </div>

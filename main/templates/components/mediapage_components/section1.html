@@ -292,8 +292,8 @@
         <a onclick="openLoaderPage()" hx-get="{% url 'media' %}" style="text-decoration: none; color:#000; border-right: none; padding: 0;"><h2>ميديا السويحلي</h2></a>
         <div class="sort">
             <form action="{% url 'media' %}">
-                <a style="border-right: none;" class="sortItem" onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=highligts">الملخصات</a>
-                <a class="sortItem" onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=archieve">الأرشيف</a>
+                <a style="border-right: none;" class="sortItem" onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=highlights">الملخصات</a>
+                <a class="sortItem" onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=archive">الأرشيف</a>
                 <a class="sortItem" onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=meetings">لقاءات إعلامية</a>
                 <a class="sortItem" onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=volleyball">الطائرة</a>
             </form>

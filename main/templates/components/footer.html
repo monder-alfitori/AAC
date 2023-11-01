@@ -105,7 +105,7 @@
         color: #fff;
         font-weight: 300;
     }
-    .footer .bottom span {
+    .footer .bottom span, .credit {
         color: #d2d2d2;
         font-weight: 700;
     }
@@ -151,31 +151,31 @@
         </div>
         <div class="brand">
             <div class="social">
-                <a onclick="openLoaderPage()" hx-get="">
+                <a target="_blank" href="https://www.facebook.com/swehlyclub">
                 <div class="facebook">
                     <img src="{% static 'images/facebook.png' %}" alt="">
-                    <h3>@Swehlysfc</h3>
+                    <h3>@swehlyclub</h3>
                 </div>
                 </a>
     
-                <a onclick="openLoaderPage()" hx-get="">
+                <a target="_blank" href="">
                     <div class="facebook">
                         <img src="{% static 'images/tiktok.png' %}" alt="">
-                        <h3>@Swehlysfc</h3>
+                        <h3>@swehlyclub</h3>
                     </div>
                 </a>
                     
-                <a onclick="openLoaderPage()" hx-get="">
+                <a target="_blank" href="https://www.instagram.com/swehlyclub">
                     <div class="facebook">
                         <img src="{% static 'images/instagram.png' %}" alt="">
-                        <h3>@Swehlysfc</h3>
+                        <h3>@swehlyclub</h3>
                     </div>
                 </a>
                 
-                <a onclick="openLoaderPage()" hx-get="">
+                <a target="_blank" href="">
                     <div class="facebook">
                         <img src="{% static 'images/x.png' %}" alt="">
-                        <h3>@Swehlysfc</h3>
+                        <h3>@swehlyclub</h3>
                     </div>
                 </a>
             </div>
@@ -184,29 +184,29 @@
     
         <div class="links">
             <div class="page">
-                <a onclick="openLoaderPage()" hx-get=""><h3>آخر الأخبار</h3></a>
+                <a onclick="openLoaderPage()" hx-get="{% url 'news' %}"><h3>آخر الأخبار</h3></a>
                 <div class="shorts">
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أخبار الفريق الأول</h3></a>
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أخبار الطائرة</h3></a>
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أخبار الأكاديمة</h3></a>
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">تطورات النادي</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'news' %}?sort=firstTeam"><h3 class="link">أخبار الفريق الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'news' %}?sort=volleyball"><h3 class="link">أخبار الطائرة</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'news' %}?sort=academy"><h3 class="link">أخبار الأكاديمة</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'news' %}?sort=club"><h3 class="link">تطورات النادي</h3></a>
                 </div>
             </div>
     
             <div class="page">
-                <a onclick="openLoaderPage()" hx-get=""><h3>ميديا</h3></a>
+                <a onclick="openLoaderPage()" hx-get="{% url 'media' %}"><h3>ميديا</h3></a>
                 <div class="shorts">
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">ملخصات</h3></a>
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">أرشيف</h3></a>
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">لقاءات إعلامية</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=highlights"><h3 class="link">ملخصات</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=archive"><h3 class="link">أرشيف</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=meetings"><h3 class="link">لقاءات إعلامية</h3></a>
                 </div>
             </div>
     
             <div class="page">
-                <a onclick="openLoaderPage()" hx-get=""><h3>الفريق</h3></a>
+                <a onclick="openLoaderPage()" hx-get="{% url 'players' %}"><h3>الفريق</h3></a>
                 <div class="shorts">
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">الفريق الأول</h3></a>
-                    <a onclick="openLoaderPage()" hx-get=""><h3 class="link">فريق الطائرة</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=firstTeam"><h3 class="link">الفريق الأول</h3></a>
+                    <a onclick="openLoaderPage()" hx-get="{% url 'media' %}?sort=volleyball"><h3 class="link">فريق الطائرة</h3></a>
                 </div>
             </div>
     
@@ -231,6 +231,6 @@
     </div>
     <hr>
     <div class="bottom">
-        <p>جميع الحقوق محفوظة 2023 - تم الإعداد بواسطة <span>منصة هوية</span></p>
+        <p>جميع الحقوق محفوظة 2023 - تم الإعداد بواسطة <span><a target="_blank" href="https://www.facebook.com/Hwiyya/" class="credit">منصة هوية</a></span></p>
     </div>
 </div>

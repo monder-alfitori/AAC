@@ -18,7 +18,16 @@
     .placeholder img {
         width: 300px;
     }
+
+
 </style>
+<!--
+<div class="beforeloading" id="beforeloading">
+    <div class="image">
+        <img src="{% static 'images/loader.gif' %}" alt="">
+    </div>
+</div>
+-->
 
 <div class="placeholder" id="placeholder">
     <div class="image">
@@ -31,6 +40,23 @@
     function openLoaderPage() {
         document.getElementById("placeholder").style.display = "flex";
         document.getElementById("forplaceholder").style.display = "none";
-
       }
 </script>
+
+
+<!--
+<script>
+document.onreadystatechange = function () {
+  var state = document.readyState
+  if (state == 'interactive') {
+       document.getElementById('forplaceholder').style.visibility="hidden";
+       document.getElementById("beforeloading").style.display = "flex";
+  } else if (state == 'complete') {
+      setTimeout(function(){
+         document.getElementById('beforeloading').style.visibility="hidden";
+         document.getElementById('forplaceholder').style.visibility="visible";
+      },1000);
+  }
+}
+</script>
+-->

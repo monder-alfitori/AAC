@@ -433,7 +433,7 @@
                     <img src="{% static 'images/play.png' %}" alt="" class="play">
                     <h3>{{obj.title}}</h3>
                     <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                    <p style="direction: ltr;" >{{obj.created_at|timesince}} ago</p>
+                    <p>منذ {{obj.created_at|timesince}}</p>
                 </div>
             </a>
             <div id="showMedia{{obj.id}}" class="Moverlay">
@@ -466,7 +466,7 @@
                     <div class="left">
                         <h3>{{obj.title}}</h3>
                         <img src="{% static 'images/Slogo.png' %}" alt="" class="logo">
-                        <p style="direction: ltr;">{{obj.created_at|timesince}} ago</p>
+                        <p>منذ {{obj.created_at|timesince}}</p>
                     </div>
                 </div>
             </a>
