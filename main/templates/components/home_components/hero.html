@@ -88,9 +88,9 @@
         }
         .hero-content .btn-3:hover {
             width: 160px;
-            border: 1px solid #C11221;
+            border: 1px solid #126E49;
             color: #fff;
-            background-color: #C11221;
+            background-color: #126E49;
         box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
         }
 
@@ -169,7 +169,7 @@
         {% for obj in hero|slice:":1" %}
         <div class="overlay"><img src="/media/{{obj.image}}/" alt=""></div>
         <div class="hero-content">
-            <h6>SSC</h6>
+            <h6>AAC</h6>
             <h1>{{obj.title}}</h1>
             <p>{{obj.text}}</p>
             <a onclick="openLoaderPage()" hx-get="{% url 'newsDetail' obj.id %}"><button class="btn-3">قراءة المزيد</button></a>

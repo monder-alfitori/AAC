@@ -3,7 +3,7 @@
 
     .footer {
         padding: 50px 8% 20px 8%;
-        background-color: #821b22;
+        background-color: #124631;
         position: relative;
         direction: rtl;
     }
@@ -22,7 +22,6 @@
     }
     .footer .logo img {
         width: 100px;
-        filter: brightness(0) invert(1);
     }
 
     .footer .brand .social {
@@ -151,31 +150,31 @@
         </div>
         <div class="brand">
             <div class="social">
-                <a target="_blank" href="https://www.facebook.com/swehlyclub">
+                <a target="_blank" href="">
                 <div class="facebook">
                     <img src="{% static 'images/facebook.png' %}" alt="">
-                    <h3>@swehlyclub</h3>
+                    <h3>@alithadclub</h3>
                 </div>
                 </a>
     
                 <a target="_blank" href="">
                     <div class="facebook">
                         <img src="{% static 'images/tiktok.png' %}" alt="">
-                        <h3>@swehlyclub</h3>
+                        <h3>@alithadclub</h3>
                     </div>
                 </a>
                     
-                <a target="_blank" href="https://www.instagram.com/swehlyclub">
+                <a target="_blank" href="">
                     <div class="facebook">
                         <img src="{% static 'images/instagram.png' %}" alt="">
-                        <h3>@swehlyclub</h3>
+                        <h3>@alithadclub</h3>
                     </div>
                 </a>
                 
                 <a target="_blank" href="">
                     <div class="facebook">
                         <img src="{% static 'images/x.png' %}" alt="">
-                        <h3>@swehlyclub</h3>
+                        <h3>@alithadclub</h3>
                     </div>
                 </a>
             </div>
@@ -211,7 +210,7 @@
             </div>
     
             <div class="page">
-                <a onclick="openLoaderPage()" hx-get=""><h3>المنافسات</h3></a>
+                <a onclick="openLoaderPage()" hx-get="{% url 'home' %}#fixtures"><h3>المنافسات</h3></a>
                 <div class="shorts">
                     <a onclick="openLoaderPage()" hx-get="{% url 'home' %}matchDetail/2/"><h3 class="link">المباراة الماضية</h3></a>
                     <a onclick="openLoaderPage()" hx-get="{% url 'home' %}matchDetail/1/"><h3 class="link">المباراة القادمة</h3></a>
